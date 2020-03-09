@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Appointments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="website_style.css" />
+
+    <style type="text/css">
+
+    #page {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #page_wrapper {
+        padding-bottom: 100px;
+    }
+
+    .flex_container {
+        justify-content: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: space-between;
+    }
+
+    .flex_container > div {
+        width: 450px;
+        margin-right: 10px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+    }
+
+    p.flex_head {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="page">
+    <div id="page_wrapper">
+    <h1>Schedule an Appointment</h1>
+
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="questionaire.html">Questionaire</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="message.html">Messaging</a></li>
+        <div class="dropdown">
+            <button class="dropbtn">Login </button>
+            <div class="dropdown-content">
+                <a href="client_login.html">Client Login</a>
+                <a href="plumber_login.html">Plumber Login</a>
+            </div>
+        </div>
+        <li><a href="plumbers.html">Services</a></li>
+    </ul>
+
+
+    <form name="from1" onsubmit= "return validate()">
+    <div class='flex_container'>
+
+
+    <div>
+        <p class="flex_head"><strong>Basic Info:</strong></p>
+        <p>First Name: &nbsp; &nbsp;<input type="text" name='fname' id='fname'/></p>
+        <p>Last Name:* &nbsp;<input type="text" name='lname' id='lname' /></p>
+        
+    </div>
+
+
+
+    <div>
+        <p class="flex_head"><strong>Contact Info:</strong></p>
+        <p>Street:* &nbsp;<input type="text" name='street' id='street' /></p>
+        <p>City:* &nbsp; &nbsp; <input type="text" name='city' id='city' /></p>
+        <p>Phone:* &nbsp;<input type="text" name='phone' id='phone' /></p>
+        <p>Email: &nbsp;<input type="text" name='email' id='email'/> </p>
+    </div>
+
+
+
+    <div>
+        <p class="flex_head"><strong>Where is your issue?</strong></p>
+        <p>
+            <input type="radio" name="where" value="residence" checked="checked"/>Residence 
+            <input type="radio" name='where' value='commercial' />Commercial 
+            <input type="radio" name='where' value='industrial' />Industrial 
+            <input type="radio" name='where' value='other' />Other: 
+        </p>
+
+        <p>
+            <textarea name='otherWhere' id='otherWhere' placeholder="If other, please specify..." cols="30" rows="5"></textarea>
+        </p>
+    </div>
+
+
+    <div>
+        <p class="flex_head"><strong>Upload Image of Issue:</strong></p>
+        <label for='myfile'>Select a picture to upload (optional):</label>
+        <input type='file' id='myfile' name='myfile'>
+    </div>
+
+
+
+    <div>
+        <p class="flex_head"><strong>How quickly does your issue need to be fixed?</strong></p>
+        <p>
+            <input type="radio" name="urgent" value="2weeks" checked="checked" />2 weeks
+            <input type="radio" name='urgent' value='1week' />1 week
+            <input type="radio" name='urgent' value='3-4days' />3-4 days
+            <input type="radio" name='urgent' value='1-2 days' />1-2 days
+            <input type="radio" name='urgent' value='24hrs' />24 hours
+            <input type="radio" name='urgent' value='asap' /> ASAP
+        </p>
+    </div>
+
+    
+    
+
+
+    <div>
+        <p class="flex_head"><strong>Do you have a prefered Plumber?</strong></p>
+        <p>Enter Name (optonal):<input type="text" name='pref' id='pref'/></p>
+    </div>
+
+
+
+
+    <div>
+        <p class="flex_head"><strong>What is your issue?</strong></p>
+        <p>
+            <input type="checkbox" id="issue1" name="issue" value="drip_sink">
+            <label for="issue1"> Dripping Faucet</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue2" name="issue" value="slow_sink">
+            <label for="issue2"> Slow Draining Sink</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue3" name="issue" value="clogged_bath">
+            <label for="issue3"> Clogged Bath or Shower Drain</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue4" name="issue" value="clogged_toilet">
+            <label for="issue4"> Clogged Toilet</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue4" name="issue" value="running_toilet">
+            <label for="issue4"> Running Toilet</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue5" name="issue" value="water_heater">
+            <label for="issue5"> Broken Water Heater</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue6" name="issue" value="low_pressure">
+            <label for="issue6"> Low Water Pressure</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue7" name="issue" value="garbage_disposal">
+            <label for="issue7"> Broken Garbage Disposal</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue8" name="issue" value="pipe_leak">
+            <label for="issue8"> Leaking Pipe</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue9" name="issue" value="sewer">
+            <label for="issue9"> Sewer System Backup</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="issue10" name="issue" value="other">
+            <label for="issue10"> Other:</label><br>
+        </p>
+
+        <p>
+            <textarea name='otherIssue' id='otherIssue' placeholder="If other, please specify..." cols="30" rows="5"></textarea>
+        </p>
+    </div>
+
+
+
+
+    <div>
+        <p class="flex_head"><strong>What times would you want your issue fixed?</strong></p>
+
+        <p class="sub_flex_head"> <strong>Choose Day(s):</strong></p>
+        <p>
+            <input type="checkbox" id="day1" name="day" value="Monday">
+            <label for="day1"> Monday</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="day2" name="day" value="Tuesday">
+            <label for="day2"> Tuesday</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="day3" name="day" value="Wednesday">
+            <label for="day3"> Wednesday</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="day4" name="day" value="Thursday">
+            <label for="day4"> Thursday</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="day4" name="day" value="Friday">
+            <label for="day5"> Friday</label><br>
+        </p>
+
+        <p class="sub_flex_head"><strong>Choose time(s):</strong></p>
+        <p>
+            <input type="checkbox" id="time1" name="time" value="6-7am">
+            <label for="issue1"> 6:00am - 7:00am</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time2" name="time" value="7-8am">
+            <label for="issue2"> 7:00am - 8:00am</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time3" name="time" value="8-9am">
+            <label for="issue3"> 8:00am - 9:00am</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time4" name="time" value="9-10am">
+            <label for="issue4"> 9:00am - 10:00am</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time4" name="time" value="10-11am">
+            <label for="issue4"> 10:00am - 11:00am</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time5" name="time" value="11-12am">
+            <label for="issue5"> 11:00am - 12:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time6" name="time" value="12-1pm">
+            <label for="issue6"> 12:00pm - 1:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time7" name="time" value="1-2pm">
+            <label for="issue7"> 1:00pm - 2:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time8" name="time" value="2-3pm">
+            <label for="issue8"> 2:00pm - 3:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time9" name="time" value="3-4pm">
+            <label for="issue9"> 3:00pm - 4:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time9" name="time" value="4-5pm">
+            <label for="issue9"> 4:00pm - 5:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time10" name="time" value="5-6pm">
+            <label for="issue9"> 5:00pm - 6:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time11" name="time" value="6-7pm">
+            <label for="issue9"> 6:00pm - 7:00pm</label><br>
+        </p>
+        <p>
+            <input type="checkbox" id="time12" name="time" value="other">
+            <label for="issue10"> Other:</label><br>
+        </p>
+
+        <p>
+            <textarea name='otherTime' id='otherTime' placeholder="If other, please specify..." cols="30" rows="5"></textarea>
+        </p>
+
+    </div>
+
+
+
+
+    <div>
+            <p class="flex_head"><strong>Additional Concerns:</strong></p>
+            <textarea name='add' id='add' placeholder="Enter additional concerns here..." cols="30" rows="5"></textarea>
+        </br>
+            <input type="submit" value="Submit Appointment" />
+            <input type="reset">
+    </div>
+
+
+    </div>
+    </form>
+    </div>
+
+
+    <footer>
+        Industry: Plumbing <br>
+        Headquarters: 288 Boston Ave, Medford, MA, 02155
+    </footer>
+    </div>
+</body>
+
+<script language='javascript'>
+
+    lname = document.getElementById("lname");
+    street = document.getElementById("street");
+    city = document.getElementById("city");
+    phone = document.getElementById("phone");
+    let times = document.getElementsByName("time");
+    let issues = document.getElementsByName("issue");
+    let days = document.getElementsByName("day");
+
+    // checks if a checkbox has been clicked
+    function check_checkbox(checkbox) {
+        var result = false;
+        for (var i = 0; i < checkbox.length; i++) {
+            if (checkbox[i].checked){
+                result = true;
+                break;
+            }
+        }
+        return result;
+
+    }
+
+    // checks to see if certain fields are empty
+    function check_empty_fields() {
+        if (lname.value == "") {
+            alert("You must enter a lastname to continue.");
+            lname.focus();
+            return false;
+        } else if (street.value == "") {
+            alert("You must enter a street to continue.")
+            street.focus();
+            return false;
+        } else if (city.value == "") {
+            alert("You must enter a city to continue.")
+            city.focus();
+            return false;
+        } else if (phone.value == "") {
+            alert("You must enter a phone number to continue.")
+            phone.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // validates phone number
+    function valid_phone() {
+        /*
+		 * To check the phone number we use a regular expression.
+		 * ^: makes sure that we start our evaluation of the regular expression
+		 * 	  at the beginning of the string
+		 * [(]?: Says the string is valid if it has 0 or 1 "(" at the 
+		 * 	     beginning of the string (used again for ")")
+		 * [0-9]{3}: Says the string is valid as long as it has 3 digits (0-9)
+		 * 			 following the previous expression (used twice)
+		 * [-]?: Says the string is valid if it has 0 or 1 "-" following the 
+		 * 		 previous expression (used multiple times throughout)
+		 * [0-9]{4}: Says the string is valid as long as we have 4 digits 
+		 * 		     following the previous expression
+		 * $: makes sure that our evaluation of the regular expression ends 
+		 * 	  at the end of the string
+		 * Valid Formats:
+		 * 617-544-0095		(617)5440095	(617)-544-0095
+		 * 6175440095		(6175440095		....(any combination of the above)
+		 * (617)544-0095	617)5440095
+		*/
+        var reg = /^[(]?[0-9]{3}[)]?[-]?[0-9]{3}[-]?[0-9]{4}$/;
+
+        if (!reg.test(phone.value)) {
+            alert("Phone number is invalid. Try: xxx-xxx-xxxx");
+            phone.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // makes sure form entries are valid
+    function validate() {
+        if (!check_empty_fields()) {
+            return false;
+        }
+
+        if (!valid_phone()) {
+            return false;
+        }
+        
+        if (!check_checkbox(issues)) {
+            alert("You must select an issue to continue.");
+            return false;
+        }
+
+        if (!check_checkbox(times)) {
+            alert("You must select a time to continue.");
+            return false;
+        }
+
+        if (!check_checkbox(days)) {
+            alert("You must select a day to continue.");
+            return false;
+        }
+
+        alert("Thank you for making an appointment!\n A plumber will contact you shortly to arrange details.")
+
+        return true;
+    }
+
+
+</script>
+
+</html>
