@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Plumber Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="website_style.css" />
+
+    <style type="text/css">
+        #page {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #page_wrapper {
+            padding-bottom: 100px;
+        }
+
+        .flex_container {
+            justify-content: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: space-between;
+        }
+
+        .flex_container>div {
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+        }
+
+        p.flex_head {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="page">
+        <div id="page_wrapper">
+            <h1>Sign Up</h1>
+            <a name="top"></a>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="questionaire.html">Questionaire</a></li>
+                <li><a href="prices.html">Prices</a></li>
+                <li><a href="message.html">Messaging</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Login </button>
+                    <div class="dropdown-content">
+                        <a href="client_login.html">Client Login</a>
+                        <a href="plumber_login.html">Plumber Login</a>
+                    </div>
+                </div>
+                <li><a href="plumbers.html">Services</a></li>
+            </ul>
+
+
+            <form name="from1" onsubmit="return validate()">
+                <div class='flex_container'>
+
+                    <div>
+                        <p class="flex_head"><strong>Basic Info:</strong></p>
+                        <p>First Name: &nbsp; &nbsp;<input type="text" name='fname' id='fname' /></p>
+                        <p>Last Name:* &nbsp;<input type="text" name='lname' id='lname' /></p>
+
+                    </div>
+
+                    <div>
+                        <p class="flex_head"><strong>Contact Info:</strong></p>
+                        <p>Street:* &nbsp;<input type="text" name='street' id='street' /></p>
+                        <p>City:* &nbsp; &nbsp; <input type="text" name='city' id='city' /></p>
+                        <p>Zip Code:* &nbsp; &nbsp; <input type="text" name='zip' id='zip' /></p>
+                        <p>Phone:* &nbsp;<input type="text" name='phone' id='phone' /></p>
+                        <p>Email: &nbsp;<input type="text" name='email' id='email' /> </p>
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" />
+                <input type="reset">
+            </form>
+
+
+        </div>
+        <footer>
+            Industry: Plumbing <br>
+            Headquarters: 288 Boston Ave, Medford, MA, 02155
+        </footer>
+    </div>
+</body>
+
+<script language='javascript'>
+
+    lname = document.getElementById("lname");
+    street = document.getElementById("street");
+    city = document.getElementById("city");
+    phone = document.getElementById("phone");
+    zip = document.getElementById("zip");
+
+    // checks to see if certain fields are empty
+    function check_empty_fields() {
+        if (lname.value == "") {
+            alert("You must enter a lastname to continue.");
+            lname.focus();
+            return false;
+        } else if (street.value == "") {
+            alert("You must enter a street to continue.")
+            street.focus();
+            return false;
+        } else if (city.value == "") {
+            alert("You must enter a city to continue.")
+            city.focus();
+            return false;
+        } else if (phone.value == "") {
+            alert("You must enter a phone number to continue.")
+            phone.focus();
+            return false;
+        } else if (zip.value == "") {
+            alert("You must enter a zip code to continue.")
+            zip.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function valid_zip() {
+        var reg = /^[0-9]{5}$/
+
+        if (!reg.test(zip.value)) {
+            alert("Zip code is invalid. Try: xxxx");
+            zip.focus();
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
+    // validates phone number
+    function valid_phone() {
+        /*
+		 * To check the phone number we use a regular expression.
+		 * ^: makes sure that we start our evaluation of the regular expression
+		 * 	  at the beginning of the string
+		 * [(]?: Says the string is valid if it has 0 or 1 "(" at the 
+		 * 	     beginning of the string (used again for ")")
+		 * [0-9]{3}: Says the string is valid as long as it has 3 digits (0-9)
+		 * 			 following the previous expression (used twice)
+		 * [-]?: Says the string is valid if it has 0 or 1 "-" following the 
+		 * 		 previous expression (used multiple times throughout)
+		 * [0-9]{4}: Says the string is valid as long as we have 4 digits 
+		 * 		     following the previous expression
+		 * $: makes sure that our evaluation of the regular expression ends 
+		 * 	  at the end of the string
+		 * Valid Formats:
+		 * 617-544-0095		(617)5440095	(617)-544-0095
+		 * 6175440095		(6175440095		....(any combination of the above)
+		 * (617)544-0095	617)5440095
+		*/
+        var reg = /^[(]?[0-9]{3}[)]?[-]?[0-9]{3}[-]?[0-9]{4}$/;
+
+        if (!reg.test(phone.value)) {
+            alert("Phone number is invalid. Try: xxx-xxx-xxxx");
+            phone.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // makes sure form entries are valid
+    function validate() {
+        if (!check_empty_fields()) {
+            return false;
+        }
+
+        if (!valid_phone()) {
+            return false;
+        }
+
+        if (!valid_zip()) {
+            return false;
+        }
+
+        alert("Thank you for making an account!")
+
+        return true;
+    }
+
+
+</script>
+
+</html>

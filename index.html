@@ -2,8 +2,71 @@
 <html>
 <head>
 	<meta charset= "utf-8">
+	
 	<link rel="stylesheet" type="text/css" href= "website_style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
+		img {
+			width: 100vw;
+		}
+
+		#image {
+			max-height: 400px;
+			overflow: hidden;
+		}
+
+		div#subtitle {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 30px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		p.desc {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 17px;
+		}
+
+		.button {
+  			background-color: #0DAEFF;
+  			border: none;
+  			color: white;
+  			padding: 20px 40px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+			font-size: 25px;
+			margin: 0;
+
+			
+		}
+
+		.button:hover {
+  			background-color: #0088cc; /* Green */
+			color: white;
+		}
+
+		div#buttons {
+			text-align: center;
+		}
+
+		div.desc_title {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 20px;
+		}
+
+		.flex_container {
+        	justify-content: center;
+			display: flex;
+        	flex-wrap: wrap;
+        	align-items: flex-start;
+        	align-content: flex-start;
+    	}
+
+    	.flex_container > div {
+       		width: 450px;
+        	margin-right: 10px;
+    	}
 
 	</style>
 </head>
@@ -29,6 +92,80 @@
       <li><a href="plumbers.html">Services</a></li>
 	</ul>
 
+	<script language='javascript'>
+		//$("#image").show(4000, function () {
+		//		alert("Enter some numbers!");
+		//	});
+
+		//$('#image').hide().load(function () {
+		//		$(this).fadeIn(1000);
+		//	});
+
+		//$('body').ready(function () {
+
+		//		$('image').hide();
+
+		//		$('image').fadeIn(100000000000);
+
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("#image").fadeIn(3000);
+			});
+		});
+					//$('image').each(function (i) {
+					//	if (this.complete) {
+					//		$(this).fadeIn();
+					//	} else {
+					//		$(this).load(function () {
+					//			$(this).fadeIn(1000000000);
+					//		});
+					//	}
+					//});
+				//});
+
+	</script>
+
+	<div id="image"><img src="samuel-sianipar-scUBcasSvbE-unsplash.jpg" alt="Photo by Samuel Sianipar on Unsplash"></div>
+</br>
+</br>
+
+
+	
+
+	<div id='subtitle'> Plumbing without the hassle</div>
+
+</br>
+</br>
+
+	<div id='buttons'>
+		<a href="clientSignUp.html" class="button">Client Sign Up</a>
+		<a href="plumberSignUp.html" class="button">Plumber Sign Up</a>
+	</div>
+
+
+</br>
+<div class='flex_container'>
+
+	<div>
+	<div class='desc_title'><strong>What We Do:</strong></div>
+	<p class='desc'>Plumber Chat puts you in contact with highly rated experienced
+		plumbers at the click of a button. We guarantee a frictionless experience
+		that will resolve your issue quicker than you thought possible.
+	</p>
+	</div>
+
+	<div>
+	<div class='desc_title'><strong>Our Goals:</strong></div>
+	<p class='desc'>Plumber Chat aims to provide both plumbers and clients with the necessary
+		information for customers to quickly and easily recieve estimates on 
+		the their plumbing issue and arrange appointments with our database of 
+		professional plumbers.
+	</p>
+	</div>
+
+</div>
+</br>
+</br>
 	<footer>
 		Industry: Plumbing <br>
 		Headquarters: 288 Boston Ave, Medford, MA, 02155
