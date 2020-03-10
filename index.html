@@ -5,6 +5,8 @@
 	
 	<link rel="stylesheet" type="text/css" href= "website_style.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="jquery-3.4.1.js"></script>
 	<style type="text/css">
 		img {
 			width: 100vw;
@@ -93,39 +95,12 @@
 	</ul>
 
 	<script language='javascript'>
-		//$("#image").show(4000, function () {
-		//		alert("Enter some numbers!");
-		//	});
-
-		//$('#image').hide().load(function () {
-		//		$(this).fadeIn(1000);
-		//	});
-
-		//$('body').ready(function () {
-
-		//		$('image').hide();
-
-		//		$('image').fadeIn(100000000000);
-
 		$(document).ready(function () {
-			$("button").click(function () {
 				$("#image").fadeIn(3000);
-			});
 		});
-					//$('image').each(function (i) {
-					//	if (this.complete) {
-					//		$(this).fadeIn();
-					//	} else {
-					//		$(this).load(function () {
-					//			$(this).fadeIn(1000000000);
-					//		});
-					//	}
-					//});
-				//});
-
 	</script>
 
-	<div id="image"><img src="samuel-sianipar-scUBcasSvbE-unsplash.jpg" alt="Photo by Samuel Sianipar on Unsplash"></div>
+	<div id="image" style="display:none"><img src="samuel-sianipar-scUBcasSvbE-unsplash.jpg" alt="Photo by Samuel Sianipar on Unsplash"></div>
 </br>
 </br>
 
