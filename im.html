@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Plumber Service</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("button").click(function(){
+	    $("#opD").remove();
+	  });
+	});
+	</script>
+</head>
+
+<body>
+    <div id="container" onclick="return startChat();">
+        <input type="button" id="start" value="Talk to a Plumber" />
+        <div id="chat" style="display: none">
+            <div id="qstn"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <input type="button" class="choice" id="A" onclick="checkAnswer('A')" /><br/>
+                <input type="button" class="choice" id="B" onclick="checkAnswer('B')" /><br/>
+                <input type="button" class="choice" id="C" onclick="checkAnswer('C')" /><br/>
+                <div id="opD"></div>
+                <!-- <input type="button" class="choice" id="D" onclick="checkAnswer('D')" /><br/> -->
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript">
+
+	// var choiceA = document.getElementById("A");
+	// var choiceB = document.getElementById("B");
+	// var choiceC = document.getElementById("C");
+	// var choiceD = document.getElementById("D");
+
+    var questions = [
+
+	    { // 0
+	        question : "What problems are you having?",
+	        imgSrc : "img/html.png",
+	        choiceA : "My House has very low Water Pressure.",
+	        nextA : "6",
+	        choiceB : "I think the septic tank is backed up.",
+	        nextB : "7",
+	        choiceC : "I have a leak.",
+	        nextC : "8",
+	        choiceD : "I need new equipment installed.",
+	        nextD : "2"
+	    },{ // 1
+	        question : "Do you have a conventional water heating?",
+	        imgSrc : "img/css.png",
+	        choiceA : "Yes.",
+	        nextA : "9",
+	        choiceB : "No.",
+	        nextA : "9",
+	        choiceC : "I\'m not sure.",
+	        nextC : "9",
+	        choiceD : "",
+	        nextD : ""
+	    },{ // 2
+	        question : "What kind of equipment do you need installed?",
+	        imgSrc : "img/js.png",
+	        choiceA : "I need a new Toilet.",
+	        nextA : "9",
+	        choiceB : "I need a new Heater.",
+	        nextB : "9",
+	        choiceC : "I need a new plumbing system.",
+	        nextC : "9",
+	        choiceD : "",
+	        nextD : ""
+	    },{ // 3
+	    	question : "Do you have PVC water mains?",
+	    	imgSrc : "img/pipe.png",
+	    	choiceA : "Yes.",
+	    	nextA : "9",
+	    	choiceB : "No. I have ABS pipes.",
+	    	nextB : "9",
+	    	choiceC : "No. I have Cast iron or copper pipes.",
+	    	nextC : "9",
+	    	choiceD : "I am not sure.",
+	    	nextD : "9"
+	    },{ // 4
+	    	question : "For how long have you been experiencing this issue?",
+	    	imgSrc : "img/time.png",
+	    	choiceA : "Less than a week.",
+	    	nextA : "9",
+	    	choiceB : "Less than a month.",
+	    	nextB : "9",
+	    	choiceC : "It has been multiple months.",
+	    	nextC : "9",
+	    	choiceD : "I do not remember.",
+	    	nextD : "9"
+	    },{ // 5
+	    	question : "How old is your house?",
+	    	imgSrc : "img/equipment.png",
+	    	choiceA : "Less than a year.",
+	    	nextA : "9",
+	    	choiceB : "Less than a few years.",
+	    	nextB : "9",
+	    	choiceC : "Less than a decade.",
+	    	nextC : "9",
+	    	choiceD : "Very old.",
+	    	nextD : "10"
+	    },{ // 6
+	    	question : "Do you have Well Water or City Water?",
+	    	imgSrc : "",
+	    	choiceA : "Yes.",
+	    	nextA : "1",
+	    	choiceB : "No.",
+	    	nextB : "1",
+	    	choiceC : "I am not sure",
+	    	nextC : "9",
+	    	choiceD : "",
+	    	nextD : ""
+	    },{ // 7
+	    	question : "When was the last time you had your septic tank pumped?",
+	    	imgSrc : "",
+	    	choiceA : "Less than a year ago",
+	    	nextA : "11",
+	    	choiceB : "Less than a few years ago",
+	    	nextB : "11",
+	    	choiceC : "Less than a decade ago",
+	    	nextC : "9",
+	    	choiceD : "I\'m not sure",
+	    	nextD : "9"
+	    },{ // 8
+	    	question : "Where is your leak?",
+	    	imgSrc : "",
+	    	choiceA : "Sink.",
+	    	nextA : "5",
+	    	choiceB : "Shower",
+	    	nextB : "5",
+	    	choiceC : "Pipes",
+	    	nextC : "5",
+	    	choiceD : "Toilet",
+	    	nextD : "9",
+	    },{ // 9
+	    	question : "A Plumber will be in contact with you shortly. Thank you for your time!",
+	    	imgSrc : "",
+	    	choiceA : "",
+	    	nextA : "",
+	    	choiceB : "",
+	    	nextB : "",
+	    	choiceC : "",
+	    	nextC : "",
+	    	choiceD : "",
+	    	nextD : ""
+	    },{ // 10
+	    	question : "What kind of water lines does your house have?",
+	    	imgSrc : "",
+	    	choiceA : "Copper lines.",
+	    	nextA : "4",
+	    	choiceB : "Pex Tubing.",
+	    	nextB : "4",
+	    	choiceC : "CPVC",
+	    	nextC : "4",
+	    	choiceD : "Brass or galvanized pipes",
+	    	nextD : "9"
+	    },{ // 11
+	    	question : "Are you smelling sewer gas?",
+	    	imgSrc : "",
+	    	choiceA : "Yes.",
+	    	nextA : "12",
+	    	choiceB : "No.",
+	    	nextB : "9",
+	    	choiceC : "I\'m not sure",
+	    	nextC : "9",
+	    	choiceD : "",
+	    	nextD : ""
+	    },{ // 12
+	    	question : "The P-Trap does not have any water in it to prevent the smell of sewage from coming through. You will need to run every toilet, shower, sink, and fill any other drain connected to main sewer line with water",
+	    	imgSrc : "",
+	    	choiceA : "",
+	    	nextA : "",
+	    	choiceB : "",
+	    	nextB : "",
+	    	choiceC : "",
+	    	nextC : "",
+	    	choiceD : "",
+	    	nextD : ""
+	    }
+
+	];
+
+	// var lastQuestion = questions.length - 1;
+	var currentQuestion = 0;
+
+	// document.getElementById("start").onlick = startQuiz;
+
+	function startChat() {
+    	document.getElementById("start").style.display = "none";
+    	renderQuestion();
+    	document.getElementById("chat").style.display = "block";
+    }
+
+    function renderQuestion(){
+		// document.getElementById("choices").innerHTML = "Inside";
+    	var q = questions[currentQuestion];
+    	document.getElementById("qstn").innerHTML = q.question;
+		// document.getElementById("qImg").innerHTML =  q.imgSrc;
+		document.getElementById("A").value = q.choiceA;
+		document.getElementById("B").value = q.choiceB;
+		document.getElementById("C").value = q.choiceC;
+		if (q.choiceB == "" || q.choiceC == "") {
+    		// var first = "A";
+    		// var w = "<input type='button' class='choice' id='A' onclick='goHome()' value='" + q.choiceA + "' /><br/>";
+    		document.getElementById("A").value = "Go home";
+    		document.getElementById("A").setAttribute("onclick", "goHome()");
+    		document.getElementById("B").removeAttribute("value");
+    		document.getElementById("B").style.display = "none";
+    		document.getElementById("C").removeAttribute("value");
+    		document.getElementById("C").style.display = "none";
+    		document.getElementById("opD").style.display = "none";
+    		return false;
+    	}
+	   	
+	    if (typeof(q.choiceD) != 'undefined') {
+	    	var fourth = "D";
+	    	var s = "<input type='button' class='choice' id='D' onclick='checkAnswer(\"" + fourth + "\")' value='" + q.choiceD + "' /><br/>";
+	    	document.getElementById("opD").innerHTML = s;
+	    }
+	    else {
+	    	document.getElementById("opD").style.display = "none";
+	    }
+	    return false;
+	}
+
+	function goHome(){
+		window.location.href="../index.html";
+	}
+
+    function checkAnswer(answer){
+
+
+    	if (answer == 'A') {
+    		currentQuestion = questions[currentQuestion].nextA;
+    	}
+    	else if (answer == 'B') {
+    		currentQuestion = questions[currentQuestion].nextB;
+    	}
+    	else if (answer == 'C') {
+    		currentQuestion = questions[currentQuestion].nextC;
+    	}
+    	else if (answer == 'D') {
+    		currentQuestion = questions[currentQuestion].nextD;
+    	}
+    	renderQuestion();
+    }
+    </script>
+
+</body>
+
+</html>
