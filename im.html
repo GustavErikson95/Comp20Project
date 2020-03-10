@@ -55,7 +55,7 @@
 	        choiceA : "Yes.",
 	        nextA : "9",
 	        choiceB : "No.",
-	        nextA : "9",
+	        nextB : "9",
 	        choiceC : "I\'m not sure.",
 	        nextC : "9",
 	        choiceD : "",
@@ -81,7 +81,7 @@
 	    	choiceC : "No. I have Cast iron or copper pipes.",
 	    	nextC : "9",
 	    	choiceD : "I am not sure.",
-	    	nextD : "9"
+	    	nextD : "10"
 	    },{ // 4
 	    	question : "For how long have you been experiencing this issue?",
 	    	imgSrc : "img/time.png",
@@ -107,9 +107,9 @@
 	    },{ // 6
 	    	question : "Do you have Well Water or City Water?",
 	    	imgSrc : "",
-	    	choiceA : "Yes.",
+	    	choiceA : "Well.",
 	    	nextA : "1",
-	    	choiceB : "No.",
+	    	choiceB : "City.",
 	    	nextB : "1",
 	    	choiceC : "I am not sure",
 	    	nextC : "9",
@@ -134,7 +134,7 @@
 	    	choiceB : "Shower",
 	    	nextB : "5",
 	    	choiceC : "Pipes",
-	    	nextC : "5",
+	    	nextC : "3",
 	    	choiceD : "Toilet",
 	    	nextD : "9",
 	    },{ // 9
@@ -217,7 +217,7 @@
     		return false;
     	}
 	   	
-	    if (typeof(q.choiceD) != 'undefined') {
+	    if (q.choiceD != "") {
 	    	var fourth = "D";
 	    	var s = "<input type='button' class='choice' id='D' onclick='checkAnswer(\"" + fourth + "\")' value='" + q.choiceD + "' /><br/>";
 	    	document.getElementById("opD").innerHTML = s;
