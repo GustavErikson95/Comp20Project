@@ -5,6 +5,7 @@
     <title>Appointments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="website_style.css" />
+    <script src="jquery-3.4.1.js"></script>
 
     <style type="text/css">
 
@@ -43,6 +44,13 @@
     }
     </style>
 
+    <script language='javascript'>
+
+        $(document).ready(function () {
+            $("#flex_container").fadeIn(2000);
+        });
+    </script>
+
 </head>
 
 <body>
@@ -69,7 +77,7 @@
 
 
     <form name="from1" onsubmit= "return validate()">
-    <div class='flex_container'>
+    <div class='flex_container' id='flex_container' style="display:none">
 
 
     <div>

@@ -71,12 +71,37 @@
     	}
 
 	</style>
+
+
+	<script language='javascript'>
+
+		$(document).ready(function () {
+				$("#motto").slideDown(1000);
+		});
+
+		$(document).ready(function () {
+				$("#image").fadeIn(2000);
+		});
+
+		$(document).ready(function () {
+				$("#subtitle").fadeIn(2500);
+		});
+
+		$(document).ready(function () {
+				$("#buttons").fadeIn(3000);
+		});
+
+		$(document).ready(function () {
+				$("#flex_container").fadeIn(3500);
+		});
+	</script>
+
 </head>
 
 
 <body bgcolor= "#ffffff"; >
 	<h1>Plumber Chat</h1>
-	<h2>Clean and Simple</h2>
+	<h2 id="motto" style="display:none">Clean and Simple</h2>
 
 	<ul>
 	  <li><a class="active" href="#home">Home</a></li>
@@ -94,12 +119,6 @@
       <li><a href="plumbers.html">Services</a></li>
 	</ul>
 
-	<script language='javascript'>
-		$(document).ready(function () {
-				$("#image").fadeIn(3000);
-		});
-	</script>
-
 	<div id="image" style="display:none"><img src="samuel-sianipar-scUBcasSvbE-unsplash.jpg" alt="Photo by Samuel Sianipar on Unsplash"></div>
 </br>
 </br>
@@ -107,19 +126,19 @@
 
 	
 
-	<div id='subtitle'> Plumbing without the hassle</div>
+	<div id='subtitle' style="display:none"> Plumbing without the hassle</div>
 
 </br>
 </br>
 
-	<div id='buttons'>
+	<div id='buttons' style="display:none">
 		<a href="clientSignUp.html" class="button">Client Sign Up</a>
 		<a href="plumberSignUp.html" class="button">Plumber Sign Up</a>
 	</div>
 
 
 </br>
-<div class='flex_container'>
+<div class='flex_container' id='flex_container' style="display:none">
 
 	<div>
 	<div class='desc_title'><strong>What We Do:</strong></div>
