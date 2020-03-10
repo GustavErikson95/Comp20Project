@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="website_style.css" />
 
-
     <style type="text/css">
         #page {
             position: relative;
@@ -75,27 +74,36 @@
                         <p class="flex_head"><strong>Basic Info:</strong></p>
                         <p>First Name: &nbsp; &nbsp;<input type="text" name='fname' id='fname' /></p>
                         <p>Last Name:* &nbsp;<input type="text" name='lname' id='lname' /></p>
-			<p>Username:* &nbsp;<input type="text" name="username" id="username" /></p>
-			<p>Password:* &nbsp;<input type="text" name="pword" id="pword" /></p>
 
                     </div>
 
                     <div>
                         <p class="flex_head"><strong>Contact Info:</strong></p>
-                        <p>Street:* &nbsp;<input type="text" name='street' id='street' /></p>
-                        <p>City:* &nbsp; &nbsp; <input type="text" name='city' id='city' /></p>
-                        <p>Zip Code:* &nbsp; &nbsp; <input type="text" name='zip' id='zip' /></p>
-                        <p>Phone:* &nbsp;<input type="text" name='phone' id='phone' /></p>
-                        <p>Email: &nbsp;<input type="text" name='email' id='email' /> </p>
+                        <p>Street:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name='street' id='street' /></p>
+                        <p>City:* &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name='city' id='city' /></p>
+                        <p>Zip Code:* <input type="text" name='zip' id='zip' /></p>
+                        <p>Phone:* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name='phone' id='phone' /></p>
+                        <p>Email: &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name='email' id='email' />
+                        </p>
                     </div>
                 </div>
 
-        <input type="submit" value="Submit" />
-        <input type="reset">
-        </form>
+                <div>
+                    <p class="flex_head"><strong>Account Details:</strong></p>
+                    <p>Username:* <input type="text" name='usr' id='usr' /></p>
+                    <label for="pwd">Password:*</label>
+                    <input type="password" id="pwd" name="pwd" minlength="7"><br><br>
 
-        
-    </div>
+                    <label for="c_pwd">Confirm Password:*</label>
+                    <input type="password" id="c_pwd" name="c_pwd" minlength="7"><br><br>
+                </div>
+
+                <input type="submit" value="Submit" />
+                <input type="reset">
+            </form>
+
+
+        </div>
         <footer>
             Industry: Plumbing <br>
             Headquarters: 288 Boston Ave, Medford, MA, 02155
@@ -110,8 +118,9 @@
     city = document.getElementById("city");
     phone = document.getElementById("phone");
     zip = document.getElementById("zip");
-    username = document.getElementByID("user");
-    pword = document.getElementByID("pword");
+    pwd = document.getElementById("pwd");
+    c_pwd = document.getElementById("c_pwd");
+    usr = document.getElementById("usr");
 
     // checks to see if certain fields are empty
     function check_empty_fields() {
@@ -130,20 +139,24 @@
         } else if (phone.value == "") {
             alert("You must enter a phone number to continue.")
             phone.focus();
-            return false;  
+            return false;
         } else if (zip.value == "") {
             alert("You must enter a zip code to continue.")
             zip.focus();
             return false;
-        } else if (username.value == "") {
-            alert("You must enter a Username to continue.")
-            username.focus();
-            return false; 
-	} else if (pword.value == "") {
+        } else if (usr.value == "") {
+            alert("You must enter a username to continue.")
+            usr.focus();
+            return false;
+        } else if (pwd.value == "") {
             alert("You must enter a password to continue.")
-            pword.focus();
-            return false; 
-	}else {
+            pwd.focus();
+            return false;
+        } else if (c_pwd.value == "") {
+            alert("You must enter a confimation password to continue.")
+            c_pwd.focus();
+            return false;
+        } else {
             return true;
         }
     }
@@ -159,6 +172,16 @@
             return true;
         }
 
+    }
+
+    function valid_pwd() {
+        if (pwd.value != c_pwd.value) {
+            alert("Passwords do not match.");
+            c_pwd.focus();
+            return false;
+        } else {
+            return true;
+        }
     }
 
     // validates phone number
@@ -202,8 +225,12 @@
         if (!valid_phone()) {
             return false;
         }
-        
+
         if (!valid_zip()) {
+            return false;
+        }
+
+        if (!valid_pwd()) {
             return false;
         }
 
