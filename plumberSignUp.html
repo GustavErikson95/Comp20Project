@@ -74,6 +74,8 @@
                         <p class="flex_head"><strong>Basic Info:</strong></p>
                         <p>First Name: &nbsp; &nbsp;<input type="text" name='fname' id='fname' /></p>
                         <p>Last Name:* &nbsp;<input type="text" name='lname' id='lname' /></p>
+			<p>Username:* &nbsp;<input type="text" name="username" id="username" /></p>
+			<p>Password:* &nbsp;<input type="text" name="pword" id="pword" /></p>
 
                     </div>
 
@@ -107,6 +109,8 @@
     city = document.getElementById("city");
     phone = document.getElementById("phone");
     zip = document.getElementById("zip");
+    username = document.getElementByID("user");
+    pword = document.getElementByID("pword");
 
     // checks to see if certain fields are empty
     function check_empty_fields() {
@@ -130,7 +134,15 @@
             alert("You must enter a zip code to continue.")
             zip.focus();
             return false;
-        } else {
+        } else if (username.value == "") {
+            alert("You must enter a Username to continue.")
+            username.focus();
+            return false; 
+	} else if (pword.value == "") {
+            alert("You must enter a password to continue.")
+            pword.focus();
+            return false; 
+	}else {
             return true;
         }
     }
