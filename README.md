@@ -25,22 +25,48 @@ Section of Code we are most proud of:
 Requirements:
 
 At least 7 pages:
+  - Home Page
+  - Client Sign Up Page
+  - Plumber Sign Up Page
+  - About Page
+  - Appointments Page
+  - Prices Page
+  - Messaging Page
+  - Plumber Page
+  - Login Pages (kind of)
 
 External and Internal Style Sheet:
+  - Every page has an internal style sheet, and uses the external style sheet
   
 Fixed Page Elements:
+  - Fixed Nav bar 
 
 Javascript and JQuery:
+ - Javascript on Appointments Page for form validation
+ - Javascript on Client Sign Up Page for form validation
+ - Javascript on Plumber Sign Up Page for form validation
+ - JQuery on Home Page for Fade and Slide animations
+ - JQuery on Appointments Page, Plumber Sign up, and Client sign up for Fade animations
 
 Form:
+  - On Appointments Page, Client Sign Up Page, Plumber Sign Up Page, Login Pages
 
 Multiple Columns:
+ - On Price Page, Appointments Page, Plumber Page 
 
-Responsive/Mobile Friendly:
+Responsive/Mobile Friendly: Yes
 
-Works online:
+Works online: Yes
 
 No broken links: Yes
 
 No lorum ipsum: Yes
 
+
+Who did what:
+
+Eli - Price Page, External Stylesheet
+Gus - About Page, External Stylesheet
+Emil - Appointments Page, Home Page, Client and Plumber Sign Up Pages
+Ryan - Messaging, Log in Pages
+Matt - Plumber Page
