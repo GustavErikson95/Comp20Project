@@ -7,7 +7,7 @@
 # Purpose: A website for clients to get in contact with plumbers
 ############################
 
-URL: 
+URL: https://gustaverikson95.github.io/Comp20Project/index.html
 
 
 What does the business do and how does the website help them?
