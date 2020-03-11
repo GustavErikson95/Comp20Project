@@ -80,20 +80,21 @@
 		});
 
 		$(document).ready(function () {
-				$("#image").fadeIn(2000);
+				$("#image").slideDown(1500);
 		});
 
 		$(document).ready(function () {
-				$("#subtitle").fadeIn(2500);
+				$("#subtitle").fadeIn(2000);
 		});
 
 		$(document).ready(function () {
-				$("#buttons").fadeIn(3000);
+				$("#buttons").fadeIn(2500);
 		});
 
 		$(document).ready(function () {
-				$("#flex_container").fadeIn(3500);
+				$("#flex_container").fadeIn(3000);
 		});
+		
 	</script>
 
 </head>
@@ -108,9 +109,15 @@
 	  <li><a href="about.html">About</a></li>
       <li><a href="questionaire.html">Questionaire</a></li>
       <li><a href="prices.html">Prices</a></li>
-      <li><a href="im.html">Messaging</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="plumberpage.html">Plumbers</a></li>
+      <li><a href="message.html">Messaging</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">Login </button>
+        <div class="dropdown-content">
+            <a href="client_login.html">Client Login</a>
+            <a href="plumber_login.html">Plumber Login</a>
+        </div>
+      </div>
+      <li><a href="plumbers.html">Services</a></li>
 	</ul>
 
 	<div id="image" style="display:none"><img src="samuel-sianipar-scUBcasSvbE-unsplash.jpg" alt="Photo by Samuel Sianipar on Unsplash"></div>
