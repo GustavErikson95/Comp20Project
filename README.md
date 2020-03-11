@@ -58,10 +58,8 @@ Section of Code we are most proud of:
       <img src="Plumber_Login.jpeg" alt="Avatar" class="avatar">
     </div>
 
-Why we picked this: It is something that we have not covered in class, so we thought it was cool that we could make such a
-complex pop-up as opposed to the regular alert(). This pop up works with a animate class that uses a zoom transition to open a login pop-up page. This is done by first assigning the form containing class "modal" to have "display: none;" which hides the div tag until the button to login changes the display to "block". Inside this form are two input tags asking for a username and password login, with a placeholder faded text. The login button should then send this login information out to authenticate the user. Also, there are two cancel buttons which is a 'X' written as "&times;" and "Cancel" which simply reset the div tag containing the login form to have "display: none;". This allows for a more seamless transitioning pop-up functionality.
-
-How it works:
+Why we picked this/How it works: It is something that we have not covered in class, so we thought it was cool that we could 
+make such a complex pop-up as opposed to the regular alert(). This pop up works with a animate class that uses a zoom transition to open a login pop-up page. This is done by first assigning the form containing class "modal" to have "display: none;" which hides the div tag until the button to login changes the display to "block". Inside this form are two input tags asking for a username and password login, with a placeholder faded text. The login button should then send this login information out to authenticate the user. Also, there are two cancel buttons which is a 'X' written as "&times;" and "Cancel" which simply reset the div tag containing the login form to have "display: none;". This allows for a more seamless transitioning pop-up functionality.
 
 
 Requirements:
