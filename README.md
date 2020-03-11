@@ -87,8 +87,8 @@ Javascript and JQuery:
  - Javascript on Appointments Page for form validation
  - Javascript on Client Sign Up Page for form validation
  - Javascript on Plumber Sign Up Page for form validation
- - JQuery on Home Page for Fade and Slide animations
- - JQuery on Appointments Page, Plumber Sign up, and Client sign up for Fade animations
+ - Javascript on Login Page
+ - JQuery on every page for Fade and Slide animations
 
 Form:
   - On Appointments Page, Client Sign Up Page, Plumber Sign Up Page, Login Pages
@@ -112,3 +112,5 @@ Gus - About Page, External Stylesheet
 Emil - Appointments Page, Home Page, Client and Plumber Sign Up Pages
 Ryan - Messaging, Log in Pages
 Matt - Plumber Page
+
+Towards the end, everyone helped everyone else out, so most pages were a team effort.
