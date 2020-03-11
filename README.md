@@ -20,6 +20,48 @@ What does the business do and how does the website help them?
   
 Section of Code we are most proud of:
 
+ <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <div onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</div>
+      <img src="Plumber_Login.jpeg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<button onclick="document.getElementById('pos').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="pos" class="pick">
+	<a href="clientSignUp.html" class="refbutton">Customer Sign Up</a>
+	<a href="plumberSignUp.html" class="refbutton">Plumber Sign Up</a>
+	</style>
+</div>
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <div onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</div>
+      <img src="Plumber_Login.jpeg" alt="Avatar" class="avatar">
+    </div>
+
+Why we picked this: It is something that we have not covered in class, so we thought it was cool that we could make such a
+complex pop-up as opposed to the regular alert().
+
+How it works:
 
 
 Requirements:
