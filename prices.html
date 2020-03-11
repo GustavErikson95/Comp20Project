@@ -2,10 +2,7 @@
 <html>
 <head>
 	<meta charset= "utf-8">
-    <link rel="stylesheet" type="text/css" href= "website_style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="jquery-3.4.1.js"></script>
-
+	<link rel="stylesheet" type="text/css" href= "website_style.css" />
 	<style type="text/css">
         h3 {
             text-align: left;
@@ -26,19 +23,21 @@
         }
 
         div.service_type {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-gap: 30px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: space-between;
+
             background-color: #0DAEFF;
             color: black;
             font-size: 30px;
-            width: 1140px;
+            max-width: 1160px;
 
-            padding-top: 50px;
-            padding-bottom: 50px;
-            padding-left: 30px;
-            padding-right: 30px;
-
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-bottom: 40px;
+            padding-right: 20px;
         }
 
         div.item1:hover {
@@ -56,59 +55,58 @@
             color:white;
         }
 
-        div.service_type > div {
+        .service_type > div {
             background-color: rgba(255, 255, 255, 0.8);
             text-align: center;
-            padding: 30px;
-            color: black;
-            font-size: 30px;
-            width: 300px;
+            width: 305px;
+            padding: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-style: solid;
+            border-color: #0DAEFF;
+            border-width: 10px;
+        }
+
+        .service_type > div:hover {
+            background-color: black;
+            color:white;
         }
 
         div.title {
             text-align: left;
         }
-    </style>
-    
-    <script language='javascript'>
-        $(document).ready(function () {
-            $("#services").fadeIn(1000);
-        });
 
-        $(document).ready(function () {
-            $("#motto").slideDown(1000);
-        });
-    </script>
+	</style>
 </head>
 
 
 <body bgcolor= "#ffffff"; >
 	<h1>Plumber Chat</h1>
-	<h2 id="motto" style="display: none">Clean and Simple</h2>
+	<h2>Clean and Simple</h2>
 
 	<div class="navbar">
-    		<li><a href="index.html">Home</a></li>
-    		<li><a href="about.html">About</a></li>
-    		<li><a href="questionaire.html">Appointments</a></li>
-    		<li><a href="prices.html">Prices</a></li>
-    		<li><a href="im.html">Messaging</a></li>
-    		<li><a href="login.html">Login</a></li>
-    		<li><a href="plumbers.html">Plumbers</a></li>
-  	</div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="questionaire.html">Appointments</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="im.html">Messaging</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="plumberpage.html">Plumbers</a></li>
+    </div>
     
     <h3>Prices</h3>
 
-    <div class="services" id="services" style="display: none">
+    <div class="services">
 
         <div class="title">General
             <img src = "plumber.jpg">
         </div>
         <div class="service_type">
-            <div class="item1">Hiring Cost:<br>$175-$450</div>
+            <div>Hiring Cost:<br>$175-$450</div>
             
-            <div class="item2">Avg cost per hour:<br>$45-$200</div>
+            <div>Avg cost per hour:<br>$45-$200</div>
 
-            <div class="item3">Inspection fee:<br>$150</div>
+            <div>Inspection fee:<br>$150</div>
         </div>
 
         <br><br><br>
@@ -121,7 +119,7 @@
 
             <div class="item2">Pipe Burst Repair:<br>$1,000-$4,000</div>
 
-            <div class="item3">Dry Wall Repair <br>(from leaks):<br> $250-$750</div>
+            <div>Dry Wall Repair <br>(from leaks):<br> $250-$750</div>
 
         </div>
 
